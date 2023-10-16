@@ -1,12 +1,11 @@
 package statementprocessing;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-
-import static org.junit.Assert.assertEquals;
 
 
 @RunWith(Parameterized.class)
@@ -57,7 +56,7 @@ public class StatementParameterizedTests {
 
         Statement statement = new Statement(regDate,  applicant,  actionType, status, debtSum );
 
-        assertEquals ("Оставшийся долг рассчитан неверно", expectedSum, statement.debtRemainedAfterPayment(payment));
+        Assert.assertEquals ("Оставшийся долг рассчитан неверно", expectedSum, statement.debtRemainedAfterPayment(payment), 0);
     }
 
 }
